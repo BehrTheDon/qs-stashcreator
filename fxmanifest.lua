@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Behr'
 description 'QS Personal stash w/ PIN lock via OxLib & JSON persistence'
-version '1.5.0'
+version '1.5.1'
 
 shared_scripts {
     '@ox_lib/init.lua',
