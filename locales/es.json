@@ -1,0 +1,49 @@
+{
+  "menus": {
+    "enter_code": "Ingrese Código de Bóveda",
+    "enter_code_desc": "Ingrese PIN para acceder a la bóveda",
+    "change_code": "Cambiar Código de Bóveda",
+    "change_code_desc": "Establezca su PIN inicial",
+    "admin_open": "Apertura de Admin",
+    "admin_open_desc": "Omitir PIN y bloqueo",
+    "open_stash": "Abrir Bóveda",
+    "open_stash_desc": "Ver contenido",
+    "access_granted": "Acceso Concedido",
+    "stash_locked": "Bóveda Bloqueada",
+    "open_hint": "Presione [E] para abrir la bóveda"
+  },
+  "dialogs": {
+    "prompt_pin": "Ingrese su PIN de 4 dígitos",
+    "prompt_new_pin": "Ingrese su nuevo PIN de 4 dígitos",
+    "label_pin": "PIN",
+    "label_new_pin": "Nuevo PIN"
+  },
+  "notifs": {
+    "incorrect": "Código incorrecto.",
+    "locked": "¡Demasiados intentos fallidos! Espere %d segundos antes de reintentar.",
+    "lockout_cooldown": "Bloqueado. Espere %d segundos antes de reintentar.",
+    "code_updated": "¡Código de la bóveda actualizado!"
+  },
+  "embeds": {
+    "locked_cooldown": "⏰ Bóveda Bloqueada (En enfriamiento)",
+    "access_granted": "✅ Acceso a la Bóveda Concedido",
+    "lockout_triggered": "⛔ Bloqueo de Bóveda Activado",
+    "access_denied": "❌ Acceso a la Bóveda Denegado",
+    "pin_changed": "🔑 PIN de la Bóveda Cambiado",
+    "player_open": "🟢 Bóveda Abierta",
+    "admin_open": "🟡 Bóveda Abierta por Admin",
+    "item_added": "📥 Ítem Añadido a la Bóveda",
+    "item_removed": "📤 Ítem Retirado de la Bóveda",
+    "field": {
+      "player": "Jugador",
+      "stash_license": "Licencia de la Bóveda",
+      "until": "Hasta",
+      "attempt": "Intento",
+      "max_attempts": "Máx. Intentos",
+      "new_pin": "Nuevo PIN",
+      "action": "Acción",
+      "item": "Ítem",
+      "count": "Cantidad"
+    }
+  }
+}

@@ -6,7 +6,23 @@ local DEBUG    = Config.Debug
 local LOCK     = Config.Lockout
 local Webhook  = Config.Webhook
 
--- ─── Helper: compare semantic versions ─────────────────────────────────────
+-- ─── Backup Thread ─────────────────────────────────────────────────────────
+Citizen.CreateThread(function()
+    Citizen.Wait(1000)  -- wait for files to mount
+
+    local fileData = LoadResourceFile(GetCurrentResourceName(), CodeFile)
+    if fileData then
+        local bakName = CodeFile .. ".bak"
+        local ok      = SaveResourceFile(GetCurrentResourceName(), bakName, fileData, -1)
+        if DEBUG then
+            print(("[stash] backup %s → %s: %s"):format(CodeFile, bakName, tostring(ok)))
+        end
+    elseif DEBUG then
+        print(("[stash] no %s to back up"):format(CodeFile))
+    end
+end)
+
+-- ─── Version‑Check Thread ──────────────────────────────────────────────────
 local function isNewerVersion(a, b)
     local function split(v)
         local t = {}
@@ -23,21 +39,21 @@ local function isNewerVersion(a, b)
     return false
 end
 
--- ─── Function: fetch latest GitHub release and compare ─────────────────────
 local function checkVersion()
     if not Config.VersionChecker.Enable then return end
 
-    local localVersion = GetResourceMetadata(GetCurrentResourceName(), "version", 0) or "0.0.0"
+    local localVer = GetResourceMetadata(GetCurrentResourceName(), "version", 0) or "0.0.0"
 
     PerformHttpRequest(
-        "https://api.github.com/repos/yourname/qs-personalstash/releases/latest",
-        function(status, text)
-            if status == 200 then
-                local ok, data = pcall(json.decode, text)
-                if ok and data.tag_name then
-                    local latest = data.tag_name:gsub("^v", "")
-                    if isNewerVersion(latest, localVersion) then
-                        print(("[stash] Update available: %s (current %s)"):format(latest, localVersion))
+        "https://api.github.com/repos/BehrTheDon/qs-stashcreator/releases/latest",
+        function(statusCode, responseBody)
+            if statusCode == 200 then
+                local ok, release = pcall(json.decode, responseBody)
+                if ok and release.tag_name then
+                    local latest = release.tag_name:gsub("^v", "")
+                    if isNewerVersion(latest, localVer) then
+                        -- RED if outdated
+                        print(("^1[stash] Update available: %s (current %s)"):format(latest, localVer))
                         if Webhook.URL ~= "" then
                             PerformHttpRequest(Webhook.URL, function() end, "POST",
                                 json.encode({
@@ -45,10 +61,10 @@ local function checkVersion()
                                     avatar_url = Webhook.AvatarURL,
                                     embeds     = {{
                                         title  = "📦 New Version Available",
-                                        color  = 0xFFA500,
+                                        color  = 0xFF0000,  -- red embed
                                         fields = {
-                                            { name="Current", value=localVersion, inline=true },
-                                            { name="Latest",  value=latest,       inline=true },
+                                            { name="Current", value=localVer, inline=true },
+                                            { name="Latest",  value=latest,   inline=true },
                                         },
                                         footer = { text = os.date("%c") }
                                     }}
@@ -56,36 +72,23 @@ local function checkVersion()
                                 { ["Content-Type"] = "application/json" }
                             )
                         end
-                    elseif DEBUG then
-                        print(("[stash] You are on latest version (%s)"):format(localVersion))
+                    else
+                        -- GREEN if up‑to‑date
+                        print(("^2[stash] You are on latest version (%s)"):format(localVer))
                     end
+                elseif DEBUG then
+                    print("[stash] Failed to parse GitHub response")
                 end
             elseif DEBUG then
-                print("[stash] Version check failed, HTTP status " .. status)
+                print("[stash] Version check HTTP error: " .. tostring(statusCode))
             end
         end,
-        "GET", "", { ["User-Agent"] = "FiveM" }
+        "GET", "", { ["User-Agent"]="FiveM" }
     )
 end
 
--- ─── Startup Thread: backup, then version check ─────────────────────────────
 Citizen.CreateThread(function()
-    -- 1s delay to ensure resource files are mounted
-    Citizen.Wait(1000)
-
-    -- Backup stash_codes.json → stash_codes.json.bak
-    local data = LoadResourceFile(GetCurrentResourceName(), CodeFile)
-    if data then
-        local bakName = CodeFile .. ".bak"
-        local ok = SaveResourceFile(GetCurrentResourceName(), bakName, data, -1)
-        if DEBUG then
-            print(("[stash] backup %s → %s: %s"):format(CodeFile, bakName, tostring(ok)))
-        end
-    elseif DEBUG then
-        print(("[stash] no %s to back up"):format(CodeFile))
-    end
-
-    -- Then do version check
+    Citizen.Wait(2000)  -- give backup a moment
     checkVersion()
 end)
 

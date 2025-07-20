@@ -1,7 +1,7 @@
 Config = {}
 
 -- Debug toggle
-Config.Debug = true
+Config.Debug = false
 
 -- Enable or disable automatic version checks (uses version in fxmanifest)
 Config.VersionChecker = {

@@ -1,0 +1,49 @@
+{
+  "menus": {
+    "enter_code": "Digite o Código do Cofre",
+    "enter_code_desc": "Insira o PIN para acessar o cofre",
+    "change_code": "Alterar Código do Cofre",
+    "change_code_desc": "Defina seu PIN inicial",
+    "admin_open": "Abertura Admin",
+    "admin_open_desc": "Ignorar PIN e bloqueio",
+    "open_stash": "Abrir Cofre",
+    "open_stash_desc": "Ver conteúdo",
+    "access_granted": "Acesso Concedido",
+    "stash_locked": "Cofre Bloqueado",
+    "open_hint": "Pressione [E] para abrir o cofre"
+  },
+  "dialogs": {
+    "prompt_pin": "Digite seu PIN de 4 dígitos",
+    "prompt_new_pin": "Digite seu novo PIN de 4 dígitos",
+    "label_pin": "PIN",
+    "label_new_pin": "Novo PIN"
+  },
+  "notifs": {
+    "incorrect": "Código incorreto.",
+    "locked": "Muitas tentativas falharam! Aguarde %d segundos antes de tentar novamente.",
+    "lockout_cooldown": "Bloqueado! Aguarde %d segundos antes de tentar novamente.",
+    "code_updated": "PIN do cofre atualizada!"
+  },
+  "embeds": {
+    "locked_cooldown": "⏰ Cofre Bloqueado (Resfriamento)",
+    "access_granted": "✅ Acesso ao Cofre Concedido",
+    "lockout_triggered": "⛔ Bloqueio do Cofre Acionado",
+    "access_denied": "❌ Acesso ao Cofre Negado",
+    "pin_changed": "🔑 PIN do Cofre Alterado",
+    "player_open": "🟢 Cofre Aberto",
+    "admin_open": "🟡 Cofre Aberto pelo Admin",
+    "item_added": "📥 Item Adicionado ao Cofre",
+    "item_removed": "📤 Item Removido do Cofre",
+    "field": {
+      "player": "Jogador",
+      "stash_license": "Licença do Cofre",
+      "until": "Até",
+      "attempt": "Tentativa",
+      "max_attempts": "Máx. Tentativas",
+      "new_pin": "Novo PIN",
+      "action": "Ação",
+      "item": "Item",
+      "count": "Quantidade"
+    }
+  }
+}

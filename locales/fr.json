@@ -1,0 +1,49 @@
+{
+  "menus": {
+    "enter_code": "Entrer le code du coffre",
+    "enter_code_desc": "Saisissez le PIN pour accéder au coffre",
+    "change_code": "Modifier le code du coffre",
+    "change_code_desc": "Définissez votre PIN initial",
+    "admin_open": "Ouverture Admin",
+    "admin_open_desc": "Contourner le PIN et le verrouillage",
+    "open_stash": "Ouvrir le coffre",
+    "open_stash_desc": "Voir le contenu",
+    "access_granted": "Accès autorisé",
+    "stash_locked": "Coffre verrouillé",
+    "open_hint": "Appuyez sur [E] pour ouvrir le coffre"
+  },
+  "dialogs": {
+    "prompt_pin": "Entrez votre PIN à 4 chiffres",
+    "prompt_new_pin": "Entrez votre nouveau PIN à 4 chiffres",
+    "label_pin": "PIN",
+    "label_new_pin": "Nouveau PIN"
+  },
+  "notifs": {
+    "incorrect": "Code incorrect.",
+    "locked": "Trop de tentatives échouées ! Attendez %d secondes avant de réessayer.",
+    "lockout_cooldown": "Verrouillé ! Attendez %d secondes avant de réessayer.",
+    "code_updated": "Code du coffre mis à jour !"
+  },
+  "embeds": {
+    "locked_cooldown": "⏰ Coffre verrouillé (En attente)",
+    "access_granted": "✅ Accès au coffre autorisé",
+    "lockout_triggered": "⛔ Verrouillage du coffre activé",
+    "access_denied": "❌ Accès au coffre refusé",
+    "pin_changed": "🔑 PIN du coffre changé",
+    "player_open": "🟢 Coffre ouvert",
+    "admin_open": "🟡 Coffre ouvert par Admin",
+    "item_added": "📥 Objet ajouté au coffre",
+    "item_removed": "📤 Objet retiré du coffre",
+    "field": {
+      "player": "Joueur",
+      "stash_license": "Licence du coffre",
+      "until": "Jusqu’à",
+      "attempt": "Tentative",
+      "max_attempts": "Tentatives max",
+      "new_pin": "Nouveau PIN",
+      "action": "Action",
+      "item": "Objet",
+      "count": "Quantité"
+    }
+  }
+}

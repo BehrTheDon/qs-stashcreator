@@ -1,0 +1,49 @@
+{
+  "menus": {
+    "enter_code": "Tresor-Code eingeben",
+    "enter_code_desc": "PIN eingeben, um auf den Tresor zuzugreifen",
+    "change_code": "Tresor-Code ändern",
+    "change_code_desc": "Legt Ihre anfängliche PIN fest",
+    "admin_open": "Admin‑Öffnung",
+    "admin_open_desc": "PIN und Sperre umgehen",
+    "open_stash": "Tresor öffnen",
+    "open_stash_desc": "Inhalt anzeigen",
+    "access_granted": "Zugriff gewährt",
+    "stash_locked": "Tresor gesperrt",
+    "open_hint": "Drücke [E], um den Tresor zu öffnen"
+  },
+  "dialogs": {
+    "prompt_pin": "Geben Sie Ihre 4‑stellige PIN ein",
+    "prompt_new_pin": "Geben Sie Ihre neue 4‑stellige PIN ein",
+    "label_pin": "PIN",
+    "label_new_pin": "Neue PIN"
+  },
+  "notifs": {
+    "incorrect": "Falscher Code.",
+    "locked": "Zu viele Fehlversuche! Warte %d Sekunden, bevor du es erneut versuchst.",
+    "lockout_cooldown": "Gesperrt! Warte %d Sekunden, bevor du es erneut versuchst.",
+    "code_updated": "Tresor‑Code aktualisiert!"
+  },
+  "embeds": {
+    "locked_cooldown": "⏰ Tresor gesperrt (Abklingzeit)",
+    "access_granted": "✅ Zugriff auf Tresor gewährt",
+    "lockout_triggered": "⛔ Tresorsperre ausgelöst",
+    "access_denied": "❌ Zugriff auf Tresor verweigert",
+    "pin_changed": "🔑 Tresor‑PIN geändert",
+    "player_open": "🟢 Tresor geöffnet",
+    "admin_open": "🟡 Tresor vom Admin geöffnet",
+    "item_added": "📥 Gegenstand zum Tresor hinzugefügt",
+    "item_removed": "📤 Gegenstand aus Tresor entfernt",
+    "field": {
+      "player": "Spieler",
+      "stash_license": "Tresor‑Lizenz",
+      "until": "Bis",
+      "attempt": "Versuch",
+      "max_attempts": "Max. Versuche",
+      "new_pin": "Neue PIN",
+      "action": "Aktion",
+      "item": "Gegenstand",
+      "count": "Anzahl"
+    }
+  }
+}
