@@ -1,0 +1,49 @@
+{
+  "menus": {
+    "enter_code": "Enter Stash Code",
+    "enter_code_desc": "Input PIN to access stash",
+    "change_code": "Change Stash Code",
+    "change_code_desc": "Set your initial PIN",
+    "admin_open": "Admin Open",
+    "admin_open_desc": "Bypass PIN & lockout",
+    "open_stash": "Open Stash",
+    "open_stash_desc": "View contents",
+    "access_granted": "Access Granted",
+    "stash_locked": "Stash Locked",
+    "open_hint": "Press [E] to open stash"
+  },
+  "dialogs": {
+    "prompt_pin": "Enter your 4-digit PIN",
+    "prompt_new_pin": "Enter your new 4-digit PIN",
+    "label_pin": "PIN",
+    "label_new_pin": "New PIN"
+  },
+  "notifs": {
+    "incorrect": "Incorrect code.",
+    "locked": "Too many wrong attempts! Wait %d seconds before retrying.",
+    "lockout_cooldown": "Locked out! Wait %d seconds before retrying.",
+    "code_updated": "Stash code updated!"
+  },
+  "embeds": {
+    "locked_cooldown": "⏰ Stash Locked (Cooldown)",
+    "access_granted": "✅ Stash Access Granted",
+    "lockout_triggered": "⛔ Stash Lockout Triggered",
+    "access_denied": "❌ Stash Access Denied",
+    "pin_changed": "🔑 Stash PIN Changed",
+    "player_open": "🟢 Stash Opened",
+    "admin_open": "🟡 Stash Opened by Admin",
+    "item_added": "📥 Item Added to Stash",
+    "item_removed": "📤 Item Removed from Stash",
+    "field": {
+      "player": "Player",
+      "stash_license": "Stash License",
+      "until": "Until",
+      "attempt": "Attempt",
+      "max_attempts": "Max Attempts",
+      "new_pin": "New PIN",
+      "action": "Action",
+      "item": "Item",
+      "count": "Count"
+    }
+  }
+}
