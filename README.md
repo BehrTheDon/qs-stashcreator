@@ -43,7 +43,7 @@ Secure, per‑player stashes with PIN protection, Discord webhook logging, local
 ## ➕ Installation
 
 1. **Clone** into your resources folder:  
-   ```bash
+```bash
    git clone https://github.com/BehrTheDon/qs-stashcreator.git
 ````
 
