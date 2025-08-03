@@ -1,4 +1,3 @@
-````markdown
 # QS‑PersonalStash
 
 Secure, per‑player stashes with PIN protection, Discord webhook logging, localization, and flexible notification drivers—built for Quasar Inventory (QS‑Inventory) servers.
